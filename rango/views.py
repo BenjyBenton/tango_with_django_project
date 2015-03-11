@@ -34,7 +34,9 @@ def index(request):
     return response
 
 def about(request):
-    return HttpResponse("Rango says this is the about page. <br /><a href='/rango/'>Index</a>")
+    context_dict = {}
+    response = render(request, 'rango/about.html', context_dict)
+    return response
 
 def category(request, category_name_slug):
     context_dict = {}
